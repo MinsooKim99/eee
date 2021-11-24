@@ -240,7 +240,7 @@ while True: # 메인 기능
     else:
         is_login=plz_login() # 로그인 성공:True 실패:False
         while is_login: # 로그인 성공시 로그아웃하기 전까지
-            menu()      # 1랭킹 2평가 3검색 4등록 5삭제 6로그아웃 7대여날짜 0종료
+            menu()      # 1랭킹 2평가 3검색 4등록 5삭제 6로그아웃 7대여날짜 8대여현황 0종료
             input_num=input("번호 입력: ")
             if input_num=='1':
                 ranking()
