@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" http-equiv="x-ua-compatible" content="IE=edge">
+        <meta name="author" content="나">
+        <meta name="keywords" content="html metatag">
+        <meta name="description" content="메타태그에 대해">
+        <!--뷰포트 설정: 보는 기기에 크기 맞추기, 배율 1.0으로 맞추기-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>대충 제목4</title>
+    </head>
+    <body>
+        <h1>form tag</h1>
+        <!--post:서버에 보내서 작업수행 / get:서버에서 가져옴-->
+        <form action="serverfilename.php" method="POST">
+            <input type="text" placeholder="아이디" name="id">
+            <br>
+            <input type="text" placeholder="비밀번호" name="password">
+            <br>
+            <select name="streamer">
+                <option value="김도">김도</option>
+                <option value="똘똘똘이">똘똘똘이</option>
+                <option value="자동">자동</option>
+            </select>
+            <br>
+            <input type="submit" value="login">
+        </form>
+    </body>
+</html>
