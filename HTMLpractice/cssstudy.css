@@ -1,0 +1,21 @@
+*{/*전체 선택자*/
+    color: blue;
+}
+
+p{/*태그 선택자*/
+    color: red;
+}
+
+.text{/*클래스 선택자(클래스는 중복가능)*/
+    color:violet;
+}
+
+#topic{/*id 선택자(id는 고유)*/
+    color:steelblue;
+}
+
+h1,p,div{/*그룹 선택자*/
+    color:springgreen;
+}
+
+/* 선택자 우선순위: 아이디>클래스>태그 */
