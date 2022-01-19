@@ -1,0 +1,27 @@
+*{
+    font-family: Times, monospace, serif;
+}
+html{
+    font-size: 16px;
+}
+h1{
+    /* font-size: 32px; */
+    font-size: 2rem; /*16x2*/
+    color:blue;
+}
+p{
+    /* font-size: 16px; */
+    font-size: 1rem; /*16x1*/
+    text-align: center; /*가운데 정렬*/
+}
+div{
+    /* border: 2px solid gold; 한번에 할수도 나눠서 할수도 있다*/
+    border-color: gold;
+    border-width: 2px;
+    border-style: solid;
+    /* display: none; 안보이게 하기*/
+}
+span{
+    font-size: 5em; /*상위태그의 5배*/
+}
+
