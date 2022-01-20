@@ -20,8 +20,25 @@ div{
     border-width: 2px;
     border-style: solid;
     /* display: none; 안보이게 하기*/
+
+    padding-top: 10px; /*내부 여백 추가*/
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    /* padding: 10px 20px 30px 40px;(top right bottom left) 이렇게도 가능*/
+    
+    margin-top: 20px;/*외부 여백 추가*/
+    margin-bottom: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    /* margin: 10px 20px 30px 40px;(top right bottom left) 이렇게도 가능*/
+
+    width: 800px;
+    height: 600px;
 }
 span{
     font-size: 5em; /*상위태그의 5배*/
+    display:inline-block;
+    width:100px; height:100px; /*크기지정하려면 인라인요소는 inline-block 필요*/
 }
 
