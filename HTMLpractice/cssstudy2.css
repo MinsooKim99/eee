@@ -11,8 +11,9 @@ h1{
 }
 p{
     /* font-size: 16px; */
-    font-size: 1rem; /*16x1*/
+    font-size: 2rem; /*16x2*/
     text-align: center; /*가운데 정렬*/
+    color:darkblue
 }
 div{
     /* border: 2px solid gold; 한번에 할수도 나눠서 할수도 있다*/
@@ -35,9 +36,21 @@ div{
 
     width: 800px;
     height: 600px;
+    
+    /* box-sizing: content-box; 기본값: 박스크기=너비높이+여백*/
+    box-sizing: border-box;/*박스크기=너비높이*/
+
+    /* background: cornsilk no-repeat url(./kyungho.jpg); 이렇게 해도 된다*/
+    background-color: cornsilk;
+    background-image: url(./kyungho.jpg);
+    background-repeat: no-repeat; /*이미지 반복X*/
+    background-position: center top; /*중앙 위 정렬*/
+    background-size: 750px 550px;
+    /* background-size: cover; 이미지 비율이 깨지지 않는 선에서 최대사이즈*/
+    /* background-size: contain; 이미지가 찌그러지거나 잘리지 않는선에서 최대사이즈*/
 }
 span{
-    font-size: 5em; /*상위태그의 5배*/
+    font-size: 4em; /*상위태그의 4배*/
     display:inline-block;
     width:100px; height:100px; /*크기지정하려면 인라인요소는 inline-block 필요*/
 }
