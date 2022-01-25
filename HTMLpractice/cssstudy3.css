@@ -1,0 +1,17 @@
+#a{
+    width: 100px;
+    height: 50px;
+    background-color: coral;
+    float:right;
+    position:relative; top:100px; right:100px;
+}
+#b{
+    width: 100px;
+    height: 100px;
+    background-color:cornflowerblue;
+    float:left;
+    position:relative; top:100px;
+}
+p{
+    clear:left;
+}

@@ -1,0 +1,21 @@
+div{
+    width:200px; height:200px;
+    background-color: chartreuse;
+    position:relative;            /*문서흐름 따름*/
+    border:1px solid black;
+}
+.abs{
+    width:100px; height:100px;
+    background-color:darkblue;
+    position:absolute; top:100px; /*문서흐름과 무관*/
+}
+.pos{
+    width:200px; height:200px;
+    background-color: chartreuse;
+    position:fixed; top:50px; right:50px; /*위치 고정*/
+}
+.fasd{
+    width:200px; height:200px;
+    background-color:cyan;
+    position:sticky; top:0px; bottom:0px; /*문서흐름에 배치후 스크롤따라 움직임*/
+}
