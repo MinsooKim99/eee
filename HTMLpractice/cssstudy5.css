@@ -1,0 +1,20 @@
+.item{
+    width:100px; height:100px;
+    background-color: greenyellow;
+}
+.item2{
+    width:400px; height:100px;
+    background-color: hotpink;
+}
+.container{
+    width:500px; height:500px;
+    border: 1px black solid;
+    display:flex; /*본인방향으로 요소 배치(기본:가로)*/
+    flex-direction: row; /*기본값*/
+    justify-content:space-around; /*around between evenly*/
+    align-items:flex-start;
+    flex-wrap: wrap; /*줄넘김 허용*/
+}
+.self{
+    align-self: flex-end; /*부모속성을 받지 않고 따로 처리할때*/
+}
