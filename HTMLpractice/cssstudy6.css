@@ -1,0 +1,61 @@
+[type="button"]{ /*평상시*/
+    width:100px; height:30px;
+    background-color:darkgray;
+    color:black;
+    border:none; border-radius:8px;
+}
+[type="button"]:hover{ /*커서가 버튼위로 올라갔을때*/
+    background-color: gray;
+}
+[type="button"]:active{ /*버튼을 클릭했을때*/
+    background-color:dimgray;
+}
+input:focus{ /*텍스트박스에 포커스 활성화시*/
+    background-color: ghostwhite;
+    color:blue;
+}
+input:disabled{ /*텍스트박스가 비활성화 됐을 시*/
+    height:100px;
+}
+
+[class="의사클래스"]{
+    display:flex;
+    justify-content: space-between;
+}
+.box{
+    width:50px; height:50px;
+    background-color: lightgreen; color:black;
+    text-align: center;
+}
+.box:nth-child(3){ /*3번째요소만*/
+    background-color: darkblue; color:white;
+}
+.box:nth-child(2n){ /*2n번째 요소만: 수식 가능*/
+    background-color:darkred; color:white;
+}
+
+ul{
+    font-size: 32px;
+}
+li::marker{ /*마커*/
+    color:greenyellow;
+}
+ul::first-line{ /*첫줄*/
+    color:red;
+}
+ul::first-letter{ /*첫글자*/
+    color:dodgerblue;
+}
+input::placeholder{/*텍스트창 안의 placeholder*/
+    color:mediumblue;
+}
+p::before{/*앞에 추가*/
+    content:"앞에 추가한 텍스트 요소 ";
+    color:orange;
+    font-weight: 1000;
+}
+p::after{/*뒤에 추가*/
+    content:" 뒤에 추가한 텍스트 요소 ";
+    color:purple;
+    font-weight: 1000;
+}
