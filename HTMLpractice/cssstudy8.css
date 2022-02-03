@@ -1,0 +1,12 @@
+div{
+    width:100px; height:100px; position:relative;
+}
+div:nth-child(1){background-color: darkorange;}
+div:nth-child(2){background-color: darkorchid; bottom:50px;}
+div:nth-child(3){background-color: darkred; bottom:100px;}
+div:nth-child(4){background-color: darkturquoise; bottom:150px;}
+.first{ z-index: 4;}
+.second{ z-index: 3;}
+.third{ z-index: 2;}
+.fourth{ z-index: 1;}
+/*숫자가 높을수록 위: position요소에 대해서 조정*/
