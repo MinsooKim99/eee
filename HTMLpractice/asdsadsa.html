@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my doc</title>
+</head>
+<body>
+    <style>
+        h1{
+            background-color: aliceblue;
+            border:1px black solid;
+            text-align: center;
+        }
+        h3{
+            background-color: aquamarine;
+            border:1px black solid;
+            text-align: center;
+        }
+        [type="button"]{ /*평상시*/
+            width:100px; height:30px;
+            background-color:darkgray;
+            color:black;
+            border:none; border-radius:8px;
+        }
+        [type="button"]:hover{ /*커서가 버튼위로 올라갔을때*/
+            background-color: gray;
+        }
+        [type="button"]:active{ /*버튼을 클릭했을때*/
+            background-color:dimgray;
+        }
+
+        .box-outer{
+            width:70%;
+            background-color: azure;
+            margin:0 auto;
+        }
+        .box{
+            width:70%;
+            text-align: center;
+        }
+    </style>
+    <div class="download_csv">
+        <a href="data:image/jpeg;base64,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" download>
+            <input type="button" value="weworkremotely.csv">
+        </a>
+    </div>
+    <div class="box-outer">
+        <div style="width:100%; word-break:break-all;word-wrap:break-word;" class="box">
+            <h1>대충 제목</h1>
+            <h3>대충 회사명</h3>
+            <a href="https://www.google.co.kr/">대충 링크</a>
+            <h1>대충 제목</h1>
+            <h3>대충 회사명</h3>
+            <a href="https://www.google.co.kr/">대충 링크</a>
+            <h1>대충 제목</h1>
+            <h3>대충 회사명</h3>
+            <a href="https://www.google.co.kr/">대충 링크</a>
+            <h1>대충 제목</h1>
+            <h3>대충 회사명</h3>
+            <a href="https://www.google.co.kr/">대충 링크</a>
+            <h1>대충 제목</h1>
+            <h3>대충 회사명</h3>
+            <a href="https://www.google.co.kr/">대충 링크</a>
+            <h1>대충 제목</h1>
+            <h3>대충 회사명</h3>
+            <a href="https://www.google.co.kr/">대충 링크</a>
+            <h1>대충 제목</h1>
+            <h3>대충 회사명</h3>
+            <a href="https://www.google.co.kr/">대충 링크</a>
+            <h1>대충 제목</h1>
+            <h3>대충 회사명</h3>
+            <a href="https://www.google.co.kr/">대충 링크</a>
+        </div>
+    </div>
+</body>
+</html>
