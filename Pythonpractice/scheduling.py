@@ -67,12 +67,15 @@ class queue:
                     i[2] -= 1
                     if i[4] < LEN_OF_PROCESS:
                         i[4] += 1
+                        if (i[0] == 1) and (i[2] == 2):
+                            i[4] -= 1
                     print("time: ",time_count)
                     print("after processing: ",i)
+                    # print("queue = ",self.q)
                     print()
                     time_count += 1
-                else:
-                    pass
+                # else:
+                #     pass
             
         
     # def get_arrival(self): # 도착시간 리스트로 반환
@@ -100,47 +103,77 @@ def feedback_algorithm(process):
     
     # print([x[2] for x in process])
     total_service_time = 0 # service time 총합
+    arriv_time_list=list()
     for x in process:
+        arriv_time_list.append(x[1])
         x.append(0) # 4번째 인자 = Wait time
         x.append(1) # 5번째 인자 = Feedback level
         total_service_time += x[2]
     # print("total service time: ",total_service_time)
     q1 = queue(); q2 = queue(); q3 = queue(); q4 = queue(); q5 = queue()
     
-    while 1:
-        for i in range(LEN_OF_PROCESS):
-            if check_my_seq(process[i][1]) and process[i][2] != 0:
-                if process[i][4] == 1:
-                    q1.add_process(process[i])
-                elif process[i][4] == 2:
-                    q2.add_process(process[i])
-                elif process[i][4] == 3:
-                    q3.add_process(process[i])
-                elif process[i][4] == 4:
-                    q4.add_process(process[i])
-                elif process[i][4] == 5:
-                    q5.add_process(process[i])
-            else:
-                pass
+    global time_count
+    flag = 1
+    while flag:
+        while 1:
+            for i in range(LEN_OF_PROCESS):
+                if check_my_seq(process[i][1]) and process[i][2] != 0:
+                    if process[i][4] == 1:
+                        q1.add_process(process[i])
+                    elif process[i][4] == 2:
+                        q2.add_process(process[i])
+                    elif process[i][4] == 3:
+                        q3.add_process(process[i])
+                    elif process[i][4] == 4:
+                        q4.add_process(process[i])
+                    elif process[i][4] == 5:
+                        q5.add_process(process[i])
+                else:
+                    pass
             
-        # 우선순위 높은 큐부터 순차적으로 실행
-        q1.run_process(); q2.run_process(); q3.run_process(); q4.run_process(); q5.run_process()
-        result.append(q1.q); result.append(q2.q); result.append(q3.q); result.append(q4.q); result.append(q5.q)
-        # 작업 한번 처리한 프로세스기록 삭제
-        q1.remove_process(); q2.remove_process(); q3.remove_process(); q4.remove_process(); q5.remove_process()
-        
-        
-        # print(q1.q)
-        # print(q2.q)
-        # print(q3.q)
-        # print(q4.q)
-        # print(q5.q)
+            print(q1.q); print(q2.q); print(q3.q); print(q4.q); print(q5.q)
+            
+            # 우선순위 높은 큐부터 순차적으로 실행
+            q1.run_process() # 일단 레벨1큐 실행
                 
-        if time_count > total_service_time:
-            print(result)
-            break
-    # 출력할것 ①프로세스 id, ②도착시간, ③서비스 시간, ④종료 시간, ⑤반환 시간, ⑥정규화된 반환 시간
-    # return result
+            q2.run_process() # 레벨2큐부턴 레벨1큐에 들어올게 있는지 상시 체크: 들어올게 있으면 다시 추가과정부터
+            if time_count in arriv_time_list:
+                q1.remove_process(); q2.remove_process(); q3.remove_process(); q4.remove_process(); q5.remove_process()
+                break
+                
+            q3.run_process()
+            if time_count in arriv_time_list:
+                q1.remove_process(); q2.remove_process(); q3.remove_process(); q4.remove_process(); q5.remove_process()
+                break
+                
+            q4.run_process()
+            if time_count in arriv_time_list:
+                q1.remove_process(); q2.remove_process(); q3.remove_process(); q4.remove_process(); q5.remove_process()
+                break
+            
+            q5.run_process()
+            if time_count in arriv_time_list:
+                q1.remove_process(); q2.remove_process(); q3.remove_process(); q4.remove_process(); q5.remove_process()
+                break
+            
+            
+            result.append(q1.q); result.append(q2.q); result.append(q3.q); result.append(q4.q); result.append(q5.q)
+            # 작업 한번 처리한 프로세스기록 삭제
+            q1.remove_process(); q2.remove_process(); q3.remove_process(); q4.remove_process(); q5.remove_process()
+            
+            
+            # print(q1.q)
+            # print(q2.q)
+            # print(q3.q)
+            # print(q4.q)
+            # print(q5.q)
+                    
+            if time_count > total_service_time:
+                print(result)
+                flag = 0
+                break
+        # 출력할것 ①프로세스 id, ②도착시간, ③서비스 시간, ④종료 시간, ⑤반환 시간, ⑥정규화된 반환 시간
+        # return result
 
 process=readprocess()
 # rr_0=round_robin()
