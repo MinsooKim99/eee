@@ -233,4 +233,4 @@ for i in range(NUM_OF_PROCESS): # 최종결과 반환
     print("[id / 도착 / 서비스 / 종료 / 반환 / 정규화반환]\n",result[i])
     print()
 
-# 별생각없이 대기시간도 구했는데 쓸데가 없네요
+# 대기시간 구한건 실수입니다
