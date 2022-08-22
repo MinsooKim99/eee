@@ -2,9 +2,9 @@
 import pymssql
 from DBproject import *
  
-# MSSQL ? ‘?†
-conn = pymssql.connect(host=r"(local)", user='sa', password='9132', database='master', charset='EUC-KR')
-# Connection ?œ¼ë¡œë???„° Cursor ?ƒ?„±
+# MSSQL ??ï¿½
+conn = pymssql.connect(host=r"(local)", user='sa', password='1111', database='master', charset='EUC-KR')
+# Connection ?æ„ï¿½ç½¹???â”£ Cursor ?ï¿½?â”³
 cursor = conn.cursor()
 
 input_num=-1
@@ -15,12 +15,12 @@ while True:
         is_login=plz_login()
         while is_login:
             menu()
-            input_num=int(input("ë²ˆí˜¸ ?…? ¥: "))
+            input_num=int(input("ï¿½é€¸ä» ?æ¡¿?ï½¥: "))
             if input_num==1:
-                print("?•„ì§?")
+                print("?ç¬¦ï¿½?")
             elif input_num==2:
                 search()
-                input("ê³„ì†?•˜? ¤ë©? ?•„ë¬? ?‚¤?‚˜ ?ˆ„ë¥´ì„¸?š”...")
+                input("ï¿½ï¿½ï¿½?è‘º?ï½¤ï¿½? ?ç¬¦ï¿½? ?ã†?ï½˜ ?ï¿½ï¿½ï½´ï¿½ï½¸?å›ˆ...")
             elif input_num==3:
                 addLib()
             elif input_num==4:
@@ -28,9 +28,9 @@ while True:
             elif input_num==5:
                 is_login=False
             elif input_num==0:
-                print("%s?‹˜ ì¢‹ì???•˜ë£? ?˜?„¸?š”."%(id))
+                print("%s?é‹¸ ï¿½é§†???è‘ºï¿½? ?æ®?â”·?å›ˆ."%(id))
                 break
             else:
-                print("?‹¤?‹œ ?…? ¥?•˜?„¸?š”.")
+                print("?å…±?äº¨ ?æ¡¿?ï½¥?è‘º?â”·?å›ˆ.")
                 
 conn.close()
