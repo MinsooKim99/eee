@@ -5,7 +5,7 @@ def match(P, S, n, m):                  # Pattern, String, String의 길이, Pat
         l += 1
         r = 0;  matched = True          # r: 첫번째 패턴이 일치할 경우 다음 패턴의 인덱스
         while(r < m and matched):       # Pattern의 길이 이내에서 matched 되는 동안 계속 검사
-            # print("P[%d]: %c\nS[%d] = %c\n" % (r, P[r], l+r, S[l+r]))
+            print("P[%d]: %c\nS[%d]: %c\n" % (r, P[r], l+r, S[l+r]))    # Pattern이랑 String 비교과정 출력
             matched = matched and (P[r] == S[l+r])  # Pattern과 String 비교
             r += 1
     return l                            # matched된 시작 인덱스 or 마지막 인덱스 반환
@@ -21,7 +21,7 @@ if __name__=="__main__":
 
     result = match(input_ptr, input_str, len_of_str, len_of_ptr)
 
-    if (result == len_of_str - 1):                  # Pattern과 일치하는 인덱스를 찾지 못했을때
+    if (result == len_of_str - (len_of_ptr - 1)):   # Pattern과 일치하는 인덱스를 찾지 못했을때
         print("pattern을 찾을 수 없습니다.")
     else:                                           # Pattern과 일치하는 인덱스를 찾았을때
         print("pattern의 시작 index: ", result)
